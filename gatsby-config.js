@@ -3,12 +3,20 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `kdiko-web`,
+    title: `Kdiko`,
     siteUrl: `https://www.kdiko.se`
   },
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Kdiko",
+        short_name: "Kdiko",
+        icon: "src/images/kdiko-logo.png",
+      },
+    },
     {
       resolve: `gatsby-omni-font-loader`,
       options: {
