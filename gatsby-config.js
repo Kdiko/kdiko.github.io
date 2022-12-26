@@ -4,6 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Kdiko`,
+    image: `/kdiko-logo.png`,
     siteUrl: `https://www.kdiko.se`
   },
   plugins: [

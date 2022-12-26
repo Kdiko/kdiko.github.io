@@ -1,5 +1,6 @@
-import * as React from "react"
+import React from "react"
 import Layout from "../components/layout"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const IndexPage = () => {
   return (
@@ -43,3 +44,14 @@ const Hero = () => (
     </div>
   </div>
 );
+
+export const Head = () => {
+  const { title, image } = useSiteMetadata()
+
+  return (
+    <>
+      <title>{title}</title>
+      <meta name="image" content={image} />
+    </>
+  )
+}
