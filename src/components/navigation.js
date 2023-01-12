@@ -1,22 +1,25 @@
-import React from "react"
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import logo from '../images/kdiko-logo.png'
+import React from "react";
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logo from "../images/kdiko-logo.png";
 
 const navigation = [
-  { name: 'About', href: 'about', disabled: true },
-  { name: 'Work', href: 'work', disabled: true },
-  { name: 'Contact', href: 'mailto:daniel.johansson@kdiko.se' },
-]
+  { name: "About", href: "about", disabled: true },
+  { name: "Work", href: "work", disabled: true },
+  { name: "Contact", href: "mailto:daniel.johansson@kdiko.se" },
+];
 
 export default function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div>
-      <nav className="flex h-9 items-center justify-between" aria-label="Global">
-        <div className="flex lg:min-w-0 lg:flex-0" aria-label="Global">
+      <nav
+        className="flex h-9 items-center justify-between"
+        aria-label="Global"
+      >
+        <div className="lg:flex-0 flex lg:min-w-0" aria-label="Global">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Kdiko</span>
             <img className="h-8" src={logo} alt="" />
@@ -24,7 +27,13 @@ export default function Navigation() {
         </div>
         <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href}  className={`font-semibold text-gray-900 hover:text-gray-900 ${item.disabled ? 'pointer-events-none' : ''}`}>
+            <a
+              key={item.name}
+              href={item.href}
+              className={`font-semibold text-gray-900 hover:text-gray-900 ${
+                item.disabled ? "pointer-events-none" : ""
+              }`}
+            >
               {item.name}
             </a>
           ))}
@@ -41,16 +50,15 @@ export default function Navigation() {
         </div>
       </nav>
       <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
+        <Dialog.Panel
+          focus="true"
+          className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden"
+        >
           <div className="flex h-9 items-center justify-between">
             <div className="flex">
               <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Kdiko</span>
-                <img
-                  className="h-8"
-                  src={logo}
-                  alt=""
-                />
+                <img className="h-8" src={logo} alt="" />
               </a>
             </div>
             <div className="flex">
@@ -82,5 +90,5 @@ export default function Navigation() {
         </Dialog.Panel>
       </Dialog>
     </div>
-  )
+  );
 }
