@@ -1,15 +1,13 @@
-import React from "react"
+import React from "react";
 import Navigation from "./navigation";
 
 const Layout = ({ children }) => {
   return (
-    <section className="flex flex-col lg:h-screen px-6 py-6 lg:container mx-auto">
+    <section className="mx-auto flex flex-col px-6 py-6 lg:container lg:h-screen">
       <Navigation />
-      <main className="grow">
-        {children}
-      </main>
+      <main className="grow">{children}</main>
     </section>
-  )
-}
+  );
+};
 
 export default Layout;

@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `Kdiko`,
     image: `/kdiko-logo.png`,
-    siteUrl: `https://www.kdiko.se`
+    siteUrl: `https://www.kdiko.se`,
   },
   plugins: [
     "gatsby-plugin-sitemap",
@@ -22,7 +22,10 @@ module.exports = {
       resolve: `gatsby-omni-font-loader`,
       options: {
         enableListener: true,
-        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
         web: [
           {
             name: `Open Sans`,
@@ -31,5 +34,5 @@ module.exports = {
         ],
       },
     },
-  ]
+  ],
 };
