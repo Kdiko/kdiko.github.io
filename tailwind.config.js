@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        charcoal: {
-          600: "#4a4a4",
-          700: "#333333",
+        "brilliant-sea": {
+          600: "#0099b8",
+          700: "#00849f",
         },
       },
     },
