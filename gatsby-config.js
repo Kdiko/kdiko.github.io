@@ -3,15 +3,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Kdiko`,
-    image: `/kdiko-logo.png`,
-    siteUrl: `https://www.kdiko.se`,
+    title: "Kdiko",
+    image: "/kdiko-logo.png",
+    siteUrl: "https://www.kdiko.se",
   },
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-postcss",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: "Kdiko",
         short_name: "Kdiko",
@@ -19,17 +19,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-omni-font-loader`,
+      resolve: "gatsby-omni-font-loader",
       options: {
         enableListener: true,
         preconnect: [
-          `https://fonts.googleapis.com`,
-          `https://fonts.gstatic.com`,
+          "https://fonts.googleapis.com",
+          "https://fonts.gstatic.com",
         ],
         web: [
           {
-            name: `Open Sans`,
-            file: `https://fonts.googleapis.com/css2?family=Montserrat&display=swap`,
+            name: "Montserrat",
+            file: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap",
           },
         ],
       },

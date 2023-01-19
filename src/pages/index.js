@@ -16,24 +16,24 @@ export default IndexPage;
 const Hero = () => (
   <div className="flex h-full flex-col-reverse items-center justify-evenly lg:flex-row">
     <div className="mt-6 lg:mt-0 lg:w-2/5">
-      <h1 className="text-6xl font-bold tracking-tight">Hi, I'm Daniel</h1>
-      <h3 className="mt-6 text-xl font-bold tracking-tight">
-        Full Stack Developer at Kdiko
+      <h1 className="text-5xl font-bold tracking-tight">Hi, I'm Daniel</h1>
+      <h3 className="mt-4 text-2xl font-semibold tracking-tight text-brilliant-sea-700">
+        Software Developer at Kdiko
       </h3>
-      <p className="mt-6 text-lg leading-8 text-gray-600">
-        Over four years of experience in React.js, JavaScript and Java, among
-        other technologies. Focused on deliveringclean and efficient code.
+      <p className="mt-4 text-lg leading-8 text-gray-600">
+        Helping clients of all sizes build high-quality web, mobile or desktop
+        applications that meet their specific needs. Focused on delivering
+        solutions that are functional, user-friendly and easy to maintain.
       </p>
       <div className="mt-8 flex gap-x-4">
         <a
           href="mailto:daniel.johansson@kdiko.se"
-          className="inline-block rounded-lg bg-charcoal-700 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-charcoal-600 hover:bg-charcoal-700 hover:ring-charcoal-700"
+          className="inline-block rounded-lg bg-brilliant-sea-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-brilliant-sea-600 hover:bg-brilliant-sea-700 hover:ring-brilliant-sea-700"
         >
           Contact
         </a>
       </div>
     </div>
-    {/* <img src={profilePicture} /> */}
     <div className="mt-6 w-4/6 md:w-1/2 lg:mt-0 lg:w-2/6">
       <span className="sr-only">Kdiko</span>
       <svg

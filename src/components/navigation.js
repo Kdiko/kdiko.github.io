@@ -1,16 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "gatsby";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../images/kdiko-logo.png";
 
-const navigation = [
-  { name: "About", href: "about", disabled: true },
-  { name: "Work", href: "work", disabled: true },
-  { name: "Contact", href: "mailto:daniel.johansson@kdiko.se" },
-];
-
-export default function Navigation() {
+const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -20,23 +15,10 @@ export default function Navigation() {
         aria-label="Global"
       >
         <div className="lg:flex-0 flex lg:min-w-0" aria-label="Global">
-          <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Kdiko</span>
-            <img className="h-8" src={logo} alt="" />
-          </a>
+          <Logo />
         </div>
         <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end lg:gap-x-12">
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={`font-semibold text-gray-900 hover:text-gray-900 ${
-                item.disabled ? "pointer-events-none" : ""
-              }`}
-            >
-              {item.name}
-            </a>
-          ))}
+          <NavigationItems className="hover:text-brilliant-sea-700" />
         </div>
         <div className="flex lg:hidden">
           <button
@@ -56,10 +38,7 @@ export default function Navigation() {
         >
           <div className="flex h-9 items-center justify-between">
             <div className="flex">
-              <a href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">Kdiko</span>
-                <img className="h-8" src={logo} alt="" />
-              </a>
+              <Logo />
             </div>
             <div className="flex">
               <button
@@ -75,15 +54,7 @@ export default function Navigation() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
-                  >
-                    {item.name}
-                  </a>
-                ))}
+                <NavigationItems className="-mx-3 block rounded-lg py-2 px-3 text-base leading-7 hover:bg-gray-400/10" />
               </div>
             </div>
           </div>
@@ -91,4 +62,43 @@ export default function Navigation() {
       </Dialog>
     </div>
   );
-}
+};
+
+export default Navigation;
+
+const Logo = () => (
+  <Link to="/" className="-m-1.5 p-1.5">
+    <span className="sr-only">Kdiko</span>
+    <img className="h-8" src={logo} alt="" />
+  </Link>
+);
+
+const navigationItems = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "about", disabled: true },
+  { name: "Work", href: "work", disabled: true },
+];
+
+const NavigationItems = ({ className }) => (
+  <>
+    {navigationItems.map((item) => (
+      <Link
+        key={item.name}
+        to={item.href}
+        className={`${className} font-semibold text-gray-900 ${
+          item.disabled ? "pointer-events-none" : ""
+        }`}
+        activeClassName="!text-brilliant-sea-700"
+      >
+        {item.name}
+      </Link>
+    ))}
+    <a
+      key="Contact"
+      href="mailto:daniel.johansson@kdiko.se"
+      className={`${className} font-semibold text-gray-900`}
+    >
+      Contact
+    </a>
+  </>
+);
