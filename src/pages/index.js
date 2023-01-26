@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
+import { StaticImage } from "gatsby-plugin-image";
 import { useSiteMetadata } from "../hooks/use-site-metadata";
-import profilePicture from "../images/profile-picture.png";
 
 const IndexPage = () => {
   return (
@@ -30,37 +30,26 @@ const Hero = () => (
           href="mailto:daniel.johansson@kdiko.se"
           className="inline-block rounded-lg bg-brilliant-sea-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-brilliant-sea-600 hover:bg-brilliant-sea-700 hover:ring-brilliant-sea-700"
         >
-          Contact
+          Hire Me
         </a>
       </div>
     </div>
     <div className="mt-6 w-4/6 md:w-1/2 lg:mt-0 lg:w-2/6">
-      <span className="sr-only">Kdiko</span>
-      <svg
-        viewBox="0 0 200 187"
-        xmlns="http://www.w3.org/2000/svg"
-        xlink="http://www.w3.org/1999/xlink"
-      >
-        <mask id="mask0" mask-type="alpha">
-          <path
-            fill="#ffffff"
-            d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-            130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-            97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-            0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-          />
-        </mask>
-        <g mask="url(#mask0)">
-          <path
-            fill="#ffffff"
-            d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-            165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-            129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-            -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-          />
-          <image width="250" x="-20" y="-25" href={profilePicture} />
-        </g>
-      </svg>
+      <span className="sr-only">Picture of Daniel</span>
+      <StaticImage
+        src="../images/profile-picture.png"
+        alt="Picture of Daniel"
+        loading="eager"
+        placeholder="blurred"
+        quality={90}
+        blurredOptions={{
+          width: 128,
+        }}
+        imgStyle={{
+          transform: "none",
+          willChange: "auto",
+        }}
+      />
     </div>
   </div>
 );
