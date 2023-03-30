@@ -14,7 +14,9 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "prettier --list-different .",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.5.14",
