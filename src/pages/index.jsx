@@ -6,10 +6,10 @@ import { useSiteMetadata } from "../hooks/use-site-metadata";
 const IndexPage = () => {
   return (
     <Layout>
-      <div className="flex h-full flex-col-reverse items-center justify-evenly lg:flex-row">
+      <section className="flex h-full flex-col-reverse items-center justify-evenly lg:flex-row">
         <HeroText />
         <Blob />
-      </div>
+      </section>
     </Layout>
   );
 };

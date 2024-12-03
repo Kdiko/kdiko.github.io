@@ -9,7 +9,7 @@ const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div>
+    <>
       <nav
         className="flex h-9 items-center justify-between"
         aria-label="Global"
@@ -32,7 +32,7 @@ const NavigationBar = () => {
         </div>
       </nav>
       <NavigationMenu open={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-    </div>
+    </>
   );
 };
 
